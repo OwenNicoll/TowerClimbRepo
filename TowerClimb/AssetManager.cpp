@@ -21,20 +21,9 @@ sf::Texture AssetManager::RequestTexture(std::string textureName)
     }
 }
 
-sf::SoundBuffer AssetManager::RequestSoundBuffer(std::string soundName)
+sf::Texture AssetManager::RequestSoundBuffer(std::string soundName)
 {
-    auto pairFound = sounds.find(soundName);
-
-    if (pairFound != sounds.end())
-    {
-        return pairFound->second;
-    }
-    else
-    {
-        sf::SoundBuffer newSound = sounds[soundName];
-        newSound.loadFromFile(soundName);
-        return newSound;
-    }
+   
 }
 
 void AssetManager::DestroyAllAssets()
